@@ -1,0 +1,37 @@
+Concepts in Action
+
+1. Method Overriding --> a method of similar declaration is called from a child class with the same parameters  
+						 and in turn overrides the parent method with new actions
+	>"CompareTo" Method from Comparable Interface was overriden in Course.java
+	>All method signatures in the interfaces were overriden in its respective implemented class
+
+2. Inheritance --> 2nd pillar of OOP. the act of creating a hierarchy of different classes that
+					"extends" from one another
+	>"Student" and "Admin" both inherit from its parent class "User" 
+
+3. Encapsulation --> 3rd pillar of OOP. Encapsulation is when you hide your modules internal data
+ 					and all other implementation details/mechanism from other modules. it is also 
+ 					a way of restricting access to certain properties or component.
+ 	>the act of making all data fields marked as private in every class, allowing only getters/setters
+ 	to gain access to these variables. this protects and preserves data. 
+ 	>ex: see "getStuSchedule()" method in "Student.java" that returns the private ArrayList data field
+ 	"schedule" for an example. There are many other examples in my program of encapsulation. 
+ 
+ 4. The Concept of ADT (Abstract Data Types) --> The idea of an ADT is to separate the notions of
+    					specification (what kind of thing we're working with and what operations 
+    					can be performed on it) and implementation (how the thing and its 
+    					operations are actually implemented).
+
+						The benefits of using ADTs include:
+
+						-Code is easier to understand (e.g., it is easier to see "high-level" steps 
+						being performed, not obscured by low-level code).
+						-Implementations of ADTs can be changed (e.g., for efficiency) without 
+						requiring changes to the program that uses the ADTs.
+						-ADTs can be reused in future programs.
+	>In my code, an example of ADT is the use of ArrayLists, which is implemented from the Java
+	"List" class. Arraylists are easy to use, we know what methods we can use from it, and it 
+	works perfectly. At the same time, we do not care nor need to know the internal affairs of 
+	how arraylists (or even lists) are created, what its code consists of, etc. This is abstraction.
+	Lets keep it simple. 
+	

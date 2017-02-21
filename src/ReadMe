@@ -1,0 +1,75 @@
+Overall Design of Software 
+	As a course registration system, I wanted to build software that is very user-friendly, and 
+	easy for the user to use and implement. 
+	
+	Let's first discuss from a computer scientist's viewpoint, what is going on behind the scenes
+	here. This is a fully integrated, object-oriented program. We have here 8 different .java files,
+	7 of which are individual classes, and 1 that houses the main method. The way these files interact
+	with one another is as follows: 
+													
+					   User							|	Database
+			(I)		    /\			(I)			    |
+		 AdminDuties   /  \    StudentDuties		|	Course
+		 	     \    /    \     /					|
+		 		  \	 /      \   /					|	Program (Main)
+	 			  Admin    Student					|
+			   	
+		
+		We first have a superclass named "User" that has a few general functions and variables
+		that are true for anyone using the software. From "User" exists two subclasses (two different
+		types of Users) which are "Admin" and "Student". Note that: The software is designed based 
+		off of the use of the user-type and what each user can do depending on his/her identity.
+		
+		"Admin" inherits from the "User" parent class and implements the "AdminDuties" interface,
+		an interface that includes the quintessential method signatures that "Admin" must implement
+		
+		Similarly, "Student" inherits from the "User" parent class and implements the "StudentDuties" interface,
+		a different interface that includes the unique quintessential method signatures that "Student" must implement.
+		
+		Now that we have described the software behind the user-side, let's discuss now the course
+		management side that deals with mainly two files called "Course" and "Database". 
+		
+		As a Course Registration System software, the software must allow users of all types to
+		manage and deal with Courses of all kinds. Thus, the first class that we needed to create
+		was the "Course" class nested in the "Course.java" file. 
+		
+		The "Course" class contains an assortment of various methods and variables associated with
+		what can be done and what information is needed surrounding a Course. We have some 
+		variables that help store information regarding a course, in addition to functions that
+		allow the user to manipulate the course--including things like an AddStudent or RemoveStudent
+		or even a PrintInfo method that allows you to view the pertinent information for that course
+		object. 
+		
+		Next, we needed a way to store an archive of all Courses ever created, and all students
+		ever registered with the system. To do this, a "Database" class was created. All this class
+		has is two variables, CourseBank and StudentBank, which are two Array-lists that store course
+		and student objects, respectively. Once this class is instantiated in to an object in the main method, 
+		CourseBank and StudentBank array-lists are created, and allocated new memory on the heap.
+		
+		Our main method, nested in "Program", is meant to be run, which allows for the system to 
+		operate accordingly. 
+		Below is the work-flow of how the program works: 
+			1. Programs compiles and is running, immediately deserializes data. 
+			2. Asks user if he/she is a Student or an Admin (must type corresponding letter)
+			
+				*User is a Student: 
+			3a. If 's' is typed, will proceed to ask user what their student
+				username is, followed by the password. 
+			4a. Once logged-in, student will have access to their course management tools
+			5a. Student can log out by typing the corresponding number to "Exit". 
+			6a. Student is logged out
+			
+				*User is an Admin: 
+			3b. If 'a' is typed, will proceed to ask user what their admin
+				username is, followed by the password. (Note: there is only one admin created 
+				with 'Admin' and 'Admin001' as log in info. 
+			4b. Once logged-in, admin will have access to their course management tools
+			5b. Admin can log out by typing the corresponding number to "Exit". 
+			6b. Admin is logged out
+			
+			7. Data is serialized
+			
+		
+		 
+			
+			     
